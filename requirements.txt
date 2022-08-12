@@ -3,4 +3,4 @@ requests
 pytz
 bson
 pymongo
-pymongo[srv]
+dnspython

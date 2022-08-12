@@ -1,6 +1,11 @@
 import pymongo
+import os
 
-modburl = 'mongodb+srv://cxl2020mc:Qq365538151@cluster0.mjniqwk.mongodb.net/?retryWrites=true&w=majority'
+
+
+modburl = os.getenv('MONGODB_URL')
+print('连接数据库:'+str(modburl))
+
 
 client = pymongo.MongoClient(modburl)
 

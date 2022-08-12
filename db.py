@@ -1,6 +1,13 @@
 import pymongo
+import os
 
-modburl = 'mongodb+srv://cxl2020mc:Qq365538151@cluster0.mjniqwk.mongodb.net/?retryWrites=true&w=majority'
+# try:
+modburl = os.getenv('MONGODB_URL')
+print('连接数据库:'+modburl)
+# except:
+    # print('读取MONGODB_URL环境变量失败使用默认数据库链接')
+    # modburl = 'mongodb+srv://cxl2020mc:Qq365538151@cluster0.mjniqwk.mongodb.net/?retryWrites=true&w=majority'
+
 
 client = pymongo.MongoClient(modburl)
 

@@ -1,13 +1,16 @@
 from flask import Flask,  request, jsonify
 from api import main
 
-
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
 # app.debug = True
 
 @app.route('/', methods=['GET'])
 def index():
+    try:
+        import db
+    except:
+        return jsonify({"code": 500, "msg":"数据库连接失败", "data":None})
     return jsonify({"code": 200, "msg":"说说后端运行正常", "data":None})
 
 @app.route('/api/v1/talktalk/', methods=['POST', 'GET'])

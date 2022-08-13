@@ -4,8 +4,10 @@ from db import db
 
 def main(info):
     print('开始读取说说')
-    单次查询数量 = info.get('num')
-    data = list(db.说说.find().limit(15))
+    单次查询数量 = int(info.get('num'))
+    if 单次查询数量 == None:
+        单次查询数量 = 15
+    data = list(db.说说.find().limit(单次查询数量))
     print('说说数据: {}'.format(data))
     jsondata = []
     for i in data:

@@ -8,6 +8,7 @@ def main(info):
     try:
         单次查询数量 = int(info.get('num'))
         if 单次查询数量 == None:
+            print('未指定单次查询数量,使用默认数量.')
             单次查询数量 = 15
     except:
         单次查询数量 = 15

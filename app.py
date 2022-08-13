@@ -31,11 +31,11 @@ def api():
         print('返回数据: {}'.format(data))
         if data == None: 
             return jsonify({"code": 200, "msg": "OK", "data": None})
-        return jsonify({"code": 200, "msg": "OK", "data": None})
+        return jsonify({"code": 200, "msg": "OK", "data": data})
     except Exception as e:
         错误信息 = traceback.format_exc()
         print(错误信息)
-        return jsonify({"code": 500, "msg": "{}: {}".format(e.__class__.__name__, e), "data": data})
+        return jsonify({"code": 500, "msg": "{}: {}".format(e.__class__.__name__, e), "data": None})
 
 @app.errorhandler(400)
 def server_error(e):

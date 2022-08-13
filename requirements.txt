@@ -4,3 +4,4 @@ pytz
 bson
 pymongo
 dnspython
+markdown

@@ -4,9 +4,9 @@ from api import tool
 def main(info, ip):
     print('发送说说')
     data = info['data']
-    内容 = data['text']
+    内容 = info['text']
+    设备 = info['device']
     时间 = tool.格式化当前时间()
-    设备 = data['device']
     ip信息 = tool.获取ip地址信息(ip)
     data = {
         'text': 内容,

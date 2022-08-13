@@ -10,7 +10,7 @@ app = Flask(__name__)
 def index():
     return jsonify({"code": 200, "msg":"说说后端运行正常", "data":None})
 
-@app.route('/api/v1/talktalk', methods=['POST', 'GET'])
+@app.route('/api/v1/talktalk/', methods=['POST', 'GET'])
 def api():
     info = request.json
     print(type(info))

@@ -5,4 +5,4 @@ def mian(info):
         return 读取说说.main(info)
     elif info['type'] == 'send':
         return '发送说说'
-
+    

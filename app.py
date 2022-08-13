@@ -4,6 +4,7 @@ from api import main
 # import requests
 
 app = Flask(__name__)
+app.config["JSON_AS_ASCII"] = False
 # app.debug = True
 
 @app.route('/', methods=['GET'])
@@ -29,7 +30,7 @@ def server_error(e):
 
 @app.errorhandler(404)
 def server_error(e):
-    return jsonify({"code": 404, "msg": "{}: {}".format('404错误', '在请求的服务器上找不到URL'), "data": None})
+    return jsonify({"code": 404, "msg": "{}: {}".format('404错误', '在请求的服务器上找不到请求的URL'), "data": None})
 
 @app.errorhandler(500)
 def server_error(e):

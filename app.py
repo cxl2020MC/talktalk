@@ -31,7 +31,7 @@ def api():
         print('返回数据: {}'.format(data))
         if data == None: 
             return jsonify({"code": 200, "msg": "OK", "data": None})
-        return jsonify({"code": 200, "msg": "OK", "data": data})
+        return jsonify({"code": 200, "msg": "OK", "data": None})
     except Exception as e:
         错误信息 = traceback.format_exc()
         print(错误信息)

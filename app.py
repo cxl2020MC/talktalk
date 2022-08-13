@@ -21,16 +21,16 @@ def api():
 
 @app.errorhandler(400)
 def server_error(e):
-    return jsonify({"code": 400, "msg": "{}:{}".format(e.__class__.__name__, e), "data": None})
+    return jsonify({"code": 400, "msg": "{}: {}".format(e.__class__.__name__, e), "data": None})
 
 
 @app.errorhandler(404)
 def server_error(e):
-    return jsonify({"code": 404, "msg": "{}:{}".format(e.__class__.__name__, e), "data": None})
+    return jsonify({"code": 404, "msg": "{}: {}".format('404错误', '在请求的服务器上找不到URL'), "data": None})
 
 @app.errorhandler(500)
 def server_error(e):
-    return jsonify({"code": 500, "msg": "{}:{}".format(e.__class__.__name__, e), "data": None})
+    return jsonify({"code": 500, "msg": "{}: {}".format(e.__class__.__name__, e), "data": None})
 
 if __name__ == '__main__':
     app.run()

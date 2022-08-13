@@ -24,6 +24,11 @@ def api():
 def server_error(e):
     return jsonify({"code": 400, "msg": "{}:{}".format(e.__class__.__name__, e), "data": None})
 
+
+@app.errorhandler(404)
+def server_error(e):
+    return jsonify({"code": 404, "msg": "{}:{}".format(e.__class__.__name__, e), "data": None})
+
 @app.errorhandler(500)
 def server_error(e):
     return jsonify({"code": 500, "msg": "{}:{}".format(e.__class__.__name__, e), "data": None})

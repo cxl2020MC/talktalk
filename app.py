@@ -13,8 +13,7 @@ def index():
 @app.route('/api/v1/talktalk/', methods=['POST', 'GET'])
 def api():
     info = request.json
-    print(type(info))
-    print(info)
+    print("请求数据: {}".format(info))
     data = main.mian(info)
     if data == None: 
         return jsonify({"code": 200, "msg": "OK", "data": None})

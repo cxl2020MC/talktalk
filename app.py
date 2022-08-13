@@ -33,7 +33,7 @@ def api():
             return jsonify({"code": 200, "msg": "OK", "data": None})
         return jsonify({"code": 200, "msg": "OK", "data": data})
     except Exception as e:
-        s错误信息 = traceback.format_exc()
+        错误信息 = traceback.format_exc()
         print(错误信息)
         return jsonify({"code": 500, "msg": "{}: {}".format(e.__class__.__name__, e), "data": data})
 

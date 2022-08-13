@@ -14,7 +14,10 @@ def index():
 def api():
     info = request.json
     print("请求数据: {}".format(info))
-    data = main.mian(info)
+    ip = request.remote_addr
+    print('远程ip地址: {}'.format(ip))
+    data = main.mian(info, ip)
+    print('返回数据: {}'.format(data))
     if data == None: 
         return jsonify({"code": 200, "msg": "OK", "data": None})
     return jsonify({"code": 200, "msg": "OK", "data": data})

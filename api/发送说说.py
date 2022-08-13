@@ -7,7 +7,7 @@ except:
 def main(info, ip):
     print('发送说说')
     data = info['data']
-    
+
     内容 = data['text']
     设备 = data['device']
     时间 = tool.格式化当前时间()
@@ -24,4 +24,4 @@ def main(info, ip):
     print('写入数据库成功')
 
 if __name__ == '__main__':
-    main({'data': {'text': '测试2', 'device': 'vscode测试环境'}}, '42.192.189.61')
+    main({'data': {'text': '测试3', 'device': 'vscode测试环境'}}, '42.192.189.61')

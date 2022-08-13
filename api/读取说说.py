@@ -11,7 +11,7 @@ def main(info):
             单次查询数量 = 15
     except:
         单次查询数量 = 15
-    data = list(db.说说.find().limit(单次查询数量)) # .sort([("created_at", pymongo.DESCENDING)]))
+    data = list(db.说说.find().limit(单次查询数量).sort([("_id", pymongo.DESCENDING)]))
     print('说说数据: {}'.format(data))
     jsondata = []
     for i in data:

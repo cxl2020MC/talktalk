@@ -1,13 +1,17 @@
 from bson.objectid import ObjectId
 from db import db
+import pymongo
 
 
 def main(info):
     print('开始读取说说')
-    单次查询数量 = int(info.get('num'))
-    if 单次查询数量 == None:
+    try:
+        单次查询数量 = int(info.get('num'))
+        if 单次查询数量 == None:
+            单次查询数量 = 15
+    except:
         单次查询数量 = 15
-    data = list(db.说说.find().limit(单次查询数量))
+    data = list(db.说说.find().limit(单次查询数量)) # .sort([("created_at", pymongo.DESCENDING)]))
     print('说说数据: {}'.format(data))
     jsondata = []
     for i in data:

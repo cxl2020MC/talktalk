@@ -1,7 +1,6 @@
 from flask import Flask,  request, jsonify
-# from db import db
 from api import main
-# import requests
+
 
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False

@@ -12,8 +12,9 @@ def main(info, ip):
         'text': 内容,
         'time': 时间,
         'device': 设备,
-        'ip_data': ip信息
+        'ip_data': ip信息,
+        'ip': ip
     }
-    print('写入数据库,data:{}'.format(data))
+    print('写入数据库:{}'.format(data))
     db.说说.insert_one(data)
     print('写入数据库成功')

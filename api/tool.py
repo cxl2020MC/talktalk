@@ -15,7 +15,7 @@ def 获取ip地址信息(ip):
         print('ip信息: {}'.format(data))
     except Exception as e:
         print('ip信息读取失败， 报错信息：{}: {}'.format(e.__class__.__name__, e))
-        return 'N/A'
+        return
     if data['code'] == 0:
         data = data['data']
         国家 = data['country']

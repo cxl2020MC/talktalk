@@ -3,7 +3,7 @@ from flask import session
 import os
 
 def main(info):
-    密码 = os.getenv('PWD')
+    密码 = os.getenv('LOGIN_PWD')
     print('环境变量设置的密码: {}'.format(密码))
     print('请求中的密码: {}'.format(info.get('pwd')))
     if not 密码:

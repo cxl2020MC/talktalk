@@ -1,4 +1,5 @@
 from db import db
+from flask import session
 try:
     from api import tool
 except:
@@ -6,6 +7,8 @@ except:
 
 def main(info, ip):
     print('发送说说')
+    if not session.get('login'):
+        raise Exception('未登录')
     data = info['data']
 
     内容 = data['text']

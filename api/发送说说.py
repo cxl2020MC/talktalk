@@ -8,9 +8,11 @@ except:
 def main(info, ip):
     print('发送说说')
     if not session.get('login'):
+        print('用户未登录，返回错误信息')
         raise Exception('未登录')
     else:
         print('用户已登录，开始发送说说')
+    
     data = info['data']
 
     内容 = data['text']

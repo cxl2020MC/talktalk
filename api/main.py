@@ -1,6 +1,8 @@
 from api import 读取说说
 from api import 发送说说
 from api import 编辑说说
+from api import 删除说说
+from api import 点赞说说
 from api import 登录
 
 def mian(info, ip):
@@ -12,3 +14,8 @@ def mian(info, ip):
         return 发送说说.main(info, ip)
     elif info.get('type') == 'edit':
         return 编辑说说.main(info)
+    elif info.get('type') == 'del':
+        return 删除说说.main(info)
+    elif info.get('type') == 'good':
+        return 点赞说说.main(info)
+    

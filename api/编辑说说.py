@@ -1,6 +1,11 @@
 from db import db
 from bson.objectid import ObjectId
 
+try:
+    from api import tool
+except:
+    import tool
+
 def main(info):
     print('开始编辑说说')
     id = info.get('id')

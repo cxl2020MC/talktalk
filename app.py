@@ -1,8 +1,10 @@
 from flask import Flask,  request, jsonify
+from flask_cors import CORS
 from api import main
 import traceback
 
 app = Flask(__name__)
+cors = CORS(app, origins = "*", supports_credentials=True)
 app.config["JSON_AS_ASCII"] = False
 app.config['SECRET_KEY']='talktalk-vercel-py_powered_by_cxl2020mc'
 app.debug = True

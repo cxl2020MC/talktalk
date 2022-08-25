@@ -5,3 +5,4 @@ bson
 pymongo
 dnspython
 markdown
+flask-cors
